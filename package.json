@@ -1,0 +1,18 @@
+{
+  "name": "randy-robotson",
+  "description": "generate a list of random people as JSON, JS and more.",
+  "version": "0.0.0",
+  "author": "Jason Brackins",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leff/randy-robotson.git"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/mit-license.php"
+  },
+  "main": "randy-robotson",
+  "bin": {
+    "robotson": "./cli.js"
+  }
+}
