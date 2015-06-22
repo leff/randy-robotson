@@ -12,7 +12,12 @@
     count: 10,
     fields: [
       'firstname',
-      'lastname'
+      'lastname',
+      {
+        name: 'birthday',
+        maxAge: 100,
+        minAge: 18
+      }
     ]
   });
 
