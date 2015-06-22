@@ -1,0 +1,63 @@
+(function() {
+  var names = [
+    'Alex',
+    'Bret',
+    'Chris',
+    'Dave',
+    'Edwin',
+    'Fred',
+    'Gary',
+    'Harold',
+    'Ivan',
+    'Joe',
+    'Kradock',
+    'Leon',
+    'Marvin',
+    'Norbert',
+    'Owen',
+    'Pete',
+    'Quill',
+    'Randal',
+    'Santa',
+    'Ted',
+    'Ulysses',
+    'Vince',
+    'Will',
+    'Xavier',
+    'Yaw',
+    'Zack',
+    'Allie',
+    'Brit',
+    'Christine',
+    'Dana',
+    'Edna',
+    'Francis',
+    'Gwen',
+    'Hillary',
+    'Inga',
+    'Jane',
+    'Krystal',
+    'Lena',
+    'Mary',
+    'Nora',
+    'Opal',
+    'Pam',
+    'Qyynn',
+    'Ronda',
+    'Sandy',
+    'Trixy',
+    'Unga',
+    'Vivian',
+    'Wendy',
+    'Xenia',
+    'Yanna',
+    'Zarina'
+  ],
+  total = names.length - 1;
+
+  module.exports = function() {
+    var idx = Math.round( Math.random() * total );
+    return names[idx];
+  };
+
+})();
