@@ -1,5 +1,4 @@
-(function() {
-  var names = [
+var names = [
     'Adamson',
     'Branson',
     'Caveman',
@@ -29,9 +28,9 @@
   ],
   total = names.length - 1;
 
-  module.exports = function() {
-    var idx = Math.round( Math.random() * total );
-    return names[idx];
-  };
+module.exports = function() {
+  var idx = Math.round( Math.random() * total );
+  return names[idx];
+};
 
-})();
+

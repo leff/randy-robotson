@@ -1,27 +1,25 @@
 #!/usr/local/bin/node
 
-(function() {
-  var inquirer = require('inquirer'),
-      fs = require('fs'),
-      colors = require('colors'),
-      generate = require('./lib/generate.js');
+var inquirer = require('inquirer'),
+    fs = require('fs'),
+    colors = require('colors'),
+    argv = require('yargs').argv,
+    generate = require('./lib/generate.js');
 
-  console.log('Randy Robotson'.rainbow);
+console.log('Randy Robotson'.rainbow);
 
-  var records = generate({
-    count: 10,
-    fields: [
-      'firstname',
-      'lastname',
-      {
-        name: 'birthday',
-        maxAge: 100,
-        minAge: 18
-      }
-    ]
+var config = require('./robotson-config');
+var records = generate(config);
+
+console.log('Generating ' + (''+config.count).green + ' records.');
+
+if( argv.outFile ) {
+  fs.open(argv.outFile, 'w', function(err, fd) {
+    fs.writeSync(fd, JSON.stringify(records));
   });
+} else {
+  console.log(JSON.stringify(records));
+}
 
-  console.log(records);
 
 
-})();
