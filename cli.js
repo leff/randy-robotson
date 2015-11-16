@@ -8,18 +8,34 @@ var inquirer = require('inquirer'),
 
 console.log('Randy Robotson'.rainbow);
 
-var config = require('./robotson-config');
+var config_module_path = ( argv.config ) ? process.cwd() + '/' + argv.config : './robotson-config';
+var config;
+try {
+  config = require(config_module_path);
+} catch(e) {
+  console.error('Config file not found', config_module_path, e);
+  process.exit();
+}
+
+
 var records = generate(config);
 
 console.log('Generating ' + (''+config.count).green + ' records.');
 
 if( argv.outFile ) {
   fs.open(argv.outFile, 'w', function(err, fd) {
-    fs.writeSync(fd, JSON.stringify(records));
+    if( err ) {
+      console.error('Error opening outFile', argv.outFile, err );
+      process.exit();
+    }
+    if( argv.outputType == 'js' ) {
+      var varName = (argv.varName) ? argv.varName : 'window.mock_data';
+      fs.writeSync(fd, varName + ' = ' + JSON.stringify(records, null, 2) + ';');
+    } else {
+      // default json
+      fs.writeSync(fd, JSON.stringify(records));
+    }
   });
 } else {
-  console.log(JSON.stringify(records));
+  console.log(records);
 }
-
-
-

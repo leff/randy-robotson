@@ -1,3 +1,4 @@
+var fromList = require('./fromList');
 var names = [
     'Adamson',
     'Branson',
@@ -25,12 +26,10 @@ var names = [
     'Xu',
     'Yamada',
     'Zappa'
-  ],
-  total = names.length - 1;
+  ];
 
 module.exports = function() {
-  var idx = Math.round( Math.random() * total );
-  return names[idx];
+  return fromList({list: names});
 };
 
 

@@ -1,3 +1,4 @@
+var fromList = require('./fromList');
 var places = [
       'Centerville',
       'Fairview',
@@ -51,12 +52,10 @@ var places = [
       'Aleksandrovka',
       'Buenavista',
       'La Esperanza'
-    ],
-    total = places.length - 1;
+    ];
 
 module.exports = function() {
-  var idx = Math.round( Math.random() * total );
-  return places[idx];
+  return fromList({list: places});
 };
 
 
