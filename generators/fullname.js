@@ -12,7 +12,7 @@ var firstname = require('./firstname'),
 */
 module.exports = function(options) {
   var prefix = '';
-  if( options.prefixes ) {
+  if( options && options.prefixes ) {
     var idx = Math.round( Math.random() * (options.prefixes.length - 1) );
     prefix = options.prefixes[idx];
     prefix += (prefix.length) ? ' ' : '';
