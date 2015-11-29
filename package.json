@@ -1,6 +1,6 @@
 {
   "name": "randy-robotson",
-  "description": "generate a list of random people as JSON, JS and more.",
+  "description": "generate a collection of random data for prototyping as JSON.",
   "version": "0.0.0",
   "author": "Jason Brackins",
   "repository": {

@@ -1,12 +1,17 @@
+/**
+  Example robotson config as javascript.
+
+  It's also possible to use JSON, but you can't use moment dates.
+*/
 var moment = require('moment');
 var minDate = new moment().subtract(2, 'months'),
     maxDate = new moment().subtract(1, 'months');
 
 module.exports = {
-  "count": 100,
+  "count": 10,
   "fields": [
     {
-      "name": "Date",
+      "name": "date",
       "generator": "date",
       "min": minDate,
       "max": maxDate,
@@ -26,10 +31,10 @@ module.exports = {
       "name": "userCode",
       "generator": "fromList",
       "list": [
-        "GZ72ZZZ",
-        "GZ60ZZZ",
-        "GZ61ZZZ",
-        "GZ63ZZZ"
+        "UX11111",
+        "UX22222",
+        "UXP3333",
+        "UXP4444"
       ]
     }
   ]
