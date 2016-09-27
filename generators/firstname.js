@@ -1,5 +1,7 @@
-var fromList = require('./fromList');
-var names = [
+'use strict';
+
+const fromList = require('./fromList');
+const names = [
       'Alex',
       'Bret',
       'Chris',

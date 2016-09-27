@@ -1,15 +1,17 @@
 #!/usr/local/bin/node
 
-var inquirer = require('inquirer'),
-    fs = require('fs'),
-    colors = require('colors'),
-    argv = require('yargs').argv,
-    generate = require('./lib/generate.js');
+'use strict';
+
+const inquirer = require('inquirer'),
+  fs = require('fs'),
+  colors = require('colors'),
+  argv = require('yargs').argv,
+  generate = require('./lib/generate.js');
 
 console.log('Randy Robotson'.rainbow);
 
-var config_module_path = ( argv.config ) ? process.cwd() + '/' + argv.config : './robotson-config';
-var config;
+let config_module_path = ( argv.config ) ? `${process.cwd()}/${argv.config}` : './robotson-config';
+let config;
 try {
   config = require(config_module_path);
 } catch(e) {
@@ -18,9 +20,9 @@ try {
 }
 
 
-var records = generate(config);
+let records = generate(config);
 
-console.log('Generating ' + (''+config.count).green + ' records.');
+console.log(`Generating ${config.count.toString().green} records.`);
 
 if( argv.outFile ) {
   fs.open(argv.outFile, 'w', function(err, fd) {
@@ -30,7 +32,7 @@ if( argv.outFile ) {
     }
     if( argv.outputType == 'js' ) {
       var varName = (argv.varName) ? argv.varName : 'window.mock_data';
-      fs.writeSync(fd, varName + ' = ' + JSON.stringify(records, null, 2) + ';');
+      fs.writeSync(fd, `${varName} = ${JSON.stringify(records, null, 2)};`);
     } else {
       // default json
       fs.writeSync(fd, JSON.stringify(records));

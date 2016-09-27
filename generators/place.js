@@ -1,5 +1,9 @@
-var fromList = require('./fromList');
-var places = [
+'use strict';
+/*
+ * @TODO: Configurable place list
+  */
+const fromList = require('./fromList');
+const places = [
       'Centerville',
       'Fairview',
       'Franklin',
