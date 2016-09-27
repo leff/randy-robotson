@@ -1,6 +1,11 @@
+
+# DEPRECATED
+
+*Sept, 2016* I just found out about [casual](https://github.com/boo1ean/casual), which does most of this and a lot more. It looks really cool, and fully formed. It's what I will use for fake data in the future. I'll leave this repo here for my own reference.
+
 # Randy Robotson
 
-WHEN COMPLETE IT WILL generate a list of random people as JSON, JS and more. Configurable and Extensible.
+Generate a list of random people as JSON, JS and more. Configurable and Extensible.
 
 ## Command Line Interface (CLI)
 
